@@ -18,7 +18,7 @@ export const PageContext = createContext<PageContextValue>({
         textInput: '',
         setTextInput: () => {},
 
-        textareaRef: undefined
+        textareaRef: {current: null}
 })
 
 export function usePageContext() {
