@@ -29,10 +29,6 @@ export default function PageContextProvider() {
         <div className="px-5 pb-5">
           <Body/>
         </div>
-
-        <div>
-          <Footer/>
-        </div>
       </main>
 
     </PageContext.Provider>
@@ -107,35 +103,7 @@ function Body() {
 
   return (
     <div className="flex flex-1">
-      <textarea name="TextBody" id="TextBody" ref={textareaRef} className="w-full h-[690px] border rounded-[30px] p-5 text-[20px]" disabled={isDisabled}></textarea>
-    </div>
-  )
-}
-
-// [ Footer ]
-function Footer() {
-
-  const {currentRadix, setCurrentRadix, setTextInput, textareaRef} = usePageContext();
-
-  function buttonClick(radix: number) {
-    handleButtonClick({
-      nextRadix: radix,
-      currentRadix: currentRadix,
-      setRadix: setCurrentRadix,
-      setTextInput: setTextInput,
-      textareaRef: textareaRef
-    })
-  }
-
-
-  return (
-    <div className="flex flex-row justify-center items-center">
-      <div className="bg-[#D9D9D9] px-15 py-5 rounded-[46px] flex flex-row gap-15 text-[20px] font-semibold">
-        <button className="bg-[#B4B4B4] p-5 rounded-[30px] cursor-pointer" style={getButtonStyle(2, currentRadix)} onClick={() => buttonClick(2)}>Binary</button>
-        
-        <button className="bg-[#B4B4B4] p-5 rounded-[30px] cursor-pointer" style={getButtonStyle(3, currentRadix)} onClick={() => buttonClick(3)}>Hexadecimal</button>
-        <button className="bg-[#B4B4B4] p-5 rounded-[30px] cursor-pointer" style={getButtonStyle(4, currentRadix)} onClick={() => buttonClick(4)}>Decimal</button>
-      </div>
+      <textarea name="TextBody" id="TextBody" ref={textareaRef} className="w-full h-[800px] border rounded-[30px] p-5 text-[20px]" disabled={isDisabled}></textarea>
     </div>
   )
 }
